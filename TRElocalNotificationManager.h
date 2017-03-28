@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#define LocalNoticationCenter [TRElocalNotificationManager sharedManager]
+
 @interface TRElocalNotificationManager : NSObject
 
-- (void)sendLocalNFwithNFCenterTitle:(NSString *)title andNotifacation:(NSString *)notifation;
+@property (nonatomic, strong) NSString *latestNotiEntryId;
+
++(instancetype)sharedManager;
+- (void)sendLocalNFwithNFCenterTitle:(NSString *)title andNotifacation:(NSString *)notifation andUserInfo:(NSDictionary *)info;
 
 @end
